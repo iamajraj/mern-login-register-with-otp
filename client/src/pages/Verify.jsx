@@ -42,7 +42,7 @@ export const Verify = () => {
                 setSuccess(true);
 
                 setTimeout(() => {
-                    location.href = "/";
+                    navigate("/");
                 }, [1000]);
             }
         } catch (err) {
