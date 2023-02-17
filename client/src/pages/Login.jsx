@@ -29,11 +29,9 @@ export const Login = () => {
         try {
             const res = await axiosInstance.post("/auth/login", loginInfo);
 
-            if (res.statusText === "OK") {
-                localStorage.setItem("user", JSON.stringify(res.data.user));
-                localStorage.setItem("token", JSON.stringify(res.data.token));
-                navigate("/");
-            }
+            localStorage.setItem("user", JSON.stringify(res.data.user));
+            localStorage.setItem("token", JSON.stringify(res.data.token));
+            navigate("/");
         } catch (err) {
             setError(
                 err.response.data?.error
