@@ -34,17 +34,15 @@ export const Verify = () => {
                 otp,
             });
 
-            if (res.statusText === "OK") {
-                console.log(res);
-                localStorage.clear();
-                localStorage.setItem("user", JSON.stringify(res.data.user));
-                localStorage.setItem("token", JSON.stringify(res.data.token));
-                setSuccess(true);
+            console.log(res);
+            localStorage.clear();
+            localStorage.setItem("user", JSON.stringify(res.data.user));
+            localStorage.setItem("token", JSON.stringify(res.data.token));
+            setSuccess(true);
 
-                setTimeout(() => {
-                    navigate("/");
-                }, [1000]);
-            }
+            setTimeout(() => {
+                navigate("/");
+            }, [1000]);
         } catch (err) {
             setError(
                 err.response.data?.error
