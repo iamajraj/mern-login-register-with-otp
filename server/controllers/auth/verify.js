@@ -15,13 +15,11 @@ module.exports = async (req, res) => {
             error: "User OTP Doesn't Match",
         });
 
-    await Users.updateOne({
-        $set: {
-            email_verified_at: new Date(),
-        },
-    });
-
     const user = await Users.findById(user_id);
+
+    user.email_verified_at = new Date();
+
+    await user.save();
 
     const token = jwtService(user.toJSON());
 
