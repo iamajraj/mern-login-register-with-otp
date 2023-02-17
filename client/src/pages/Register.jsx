@@ -45,12 +45,9 @@ export const Register = () => {
                 registerInfo
             );
 
-            if (res.statusText === "OK") {
-                console.log(res);
-                localStorage.setItem("user", JSON.stringify(res.data.user));
-                localStorage.setItem("token", JSON.stringify(res.data.token));
-                navigate("/verify");
-            }
+            localStorage.setItem("user", JSON.stringify(res.data.user));
+            localStorage.setItem("token", JSON.stringify(res.data.token));
+            navigate("/verify");
         } catch (err) {
             setError(
                 err.response.data?.error
