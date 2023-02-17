@@ -2,7 +2,7 @@ import axios from "axios";
 
 // SET YOUR BACKEND URL
 // const BASE_URL = "http://localhost:5000/api";
-const BASE_URL = "https://mern-auth-with-otp-backend.onrender.com/";
+const BASE_URL = "https://mern-auth-with-otp-backend.onrender.com/api";
 
 const axiosInstance = axios.create({
     baseURL: BASE_URL,
